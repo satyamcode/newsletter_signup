@@ -2,6 +2,8 @@ const express=require("express");
 const bodyparser=require("body-parser");
 const request=require("request");
 const https=require("https");
+const dotenv = require('dotenv');
+dotenv.config();
 const app=express();
 app.use(express.static("public"));
 app.use(bodyparser.urlencoded({extended: true}));
@@ -29,7 +31,7 @@ const jsondata=JSON.stringify(data);
 const url="https://us17.api.mailchimp.com/3.0/lists/1a5ea65756";
 const options={
   method: "POST",
-  auth: "satyam:6beb542e72d8465bdbd786fdd3938037-us17"
+  auth: `satyam:${process.env.API_KEY}`
 }
 const request=https.request(url,options,function(response){
   if(response.statusCode === 200){
