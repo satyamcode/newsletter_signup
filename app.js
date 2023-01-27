@@ -29,7 +29,7 @@ const jsondata=JSON.stringify(data);
 const url="https://us17.api.mailchimp.com/3.0/lists/1a5ea65756";
 const options={
   method: "POST",
-  auth: "satyam:0f4510246e8602644d2763b69a8183e0-us17"
+  auth: "satyam:6beb542e72d8465bdbd786fdd3938037-us17"
 }
 const request=https.request(url,options,function(response){
   if(response.statusCode === 200){
